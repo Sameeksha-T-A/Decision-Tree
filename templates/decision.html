@@ -1,0 +1,89 @@
+
+{% block content %}
+
+{% load static %}
+
+{% static "images" as baseUrl %}
+<html>
+<head>
+
+
+    {% if refresh %}
+    <meta http-equiv="refresh" content="1" />
+    {% endif %}
+
+
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Decision Tree Model</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'assets/bootstrap-material-design-font/css/material.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/et-line-font-plugin/style.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&subset=latin">
+  <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/animate.css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+
+</head>
+
+<body style="background-image:url('{% static 'images/blue.jpg' %}');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+
+<br/>
+<section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-parallax-background mbr-after-navbar" id="header1-1" data-rv-view="2" style="width:80%;height:50%;margin: auto;border: 5px solid #fff ;">
+
+<form class="form-vertical" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<fieldset>
+
+<center>
+<!-- Form Name -->
+<br/>
+<legend><font size="8"><font color="black">DECISION TREE MODEL</legend></font></font><br/><br/>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="emailid"><font size="5">EMAIL ID :</font></label>
+  <div class="col-md-4">
+  <input id="emailid" name="emailid" placeholder="enter email" class="form-control input-md" required="required" value="{{ emailid }}" type="text">
+
+  </div>
+</div>
+<br/><br/>
+<!-- File Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="csv_file"><font size="5">UPLOAD FILE:</label>
+  <div class="col-md-4">
+    <input id="csv_file" name="csv_file" value="{{ csv_file }}" class="input-file" accept=".csv" type="file">
+  </div>
+</div>
+<br/>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary"><font size="5">SUBMIT</button>
+  </div>
+</div>
+</body>
+</center>
+</fieldset>
+</form>
+
+</section>
+</html>
+{% endblock %}
+
